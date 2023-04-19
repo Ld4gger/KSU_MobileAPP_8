@@ -1,4 +1,4 @@
-import { gql, useQuery } from '@apollo/client'
+/* import { gql, useQuery } from '@apollo/client'
 import { StyleSheet, View, Text } from 'react-native'
 
 const GET_EVENT = gql`
@@ -55,4 +55,28 @@ export const WelcomeScreen = () => {
             <DataReturn/>
         </View>
     )
+} */
+
+import { styles } from '../../Styles/ScreenStyle'
+import { View } from 'react-native'
+import { DataReturn } from '../../components/DataParcer'
+import { Button } from 'antd-mobile'
+import { SelectEventScreen } from '../../screens/SelectEventScreen';
+
+const DatePicker = SelectEventScreen
+
+export const WelcomeScreen = ({navigation}) => {
+    return (
+    <View style={styles.container}>
+        <DataReturn />
+        <br></br>
+        <Button 
+            title="Go to DatePicker" 
+            onClick={() => navigation.navigate('DatePicker')}
+            style={{fontWeight: 'bold'}}
+            >
+        Перейти к выбору даты        
+       </Button>
+    </View>    
+    )    
 }
